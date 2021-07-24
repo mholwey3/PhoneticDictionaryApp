@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneticDictionaryApp.Source.AdditionalInfoView">
+    <Label x:Name="InfoHeader" Text="" HorizontalTextAlignment="Start" FontSize="20" FontAttributes="Bold" Padding="16" />
+    <ListView x:Name="InfoList" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Word}" Padding="8" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pronunciation: " Padding="8" />
+                            <Label Text="{Binding Pronunciation}" Padding="8" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Phonetic Spelling: " Padding="8" />
+                            <Label Text="{Binding PhoneticSpelling}" Padding="8" />
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>

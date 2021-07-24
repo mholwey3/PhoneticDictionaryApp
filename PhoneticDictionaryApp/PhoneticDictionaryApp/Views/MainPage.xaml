@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneticDictionaryApp.Source.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Phonetic Dictionary" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Entry x:Name="UserInput" Placeholder="Search for a word" FontSize="24"/>
+            <Button Text="Search" Clicked="TryGetWord" FontSize="28"></Button>
+            <Label x:Name="Word" Text="" HorizontalTextAlignment="Start" FontSize="32" Padding="16" FontAttributes="Bold" />
+            <Label x:Name="Pronunciation" Text="" HorizontalTextAlignment="Start" FontSize="20" Padding="16" />
+            <Label x:Name="PhoneticSpelling" Text="" HorizontalTextAlignment="Start" FontSize="20" Padding="16" />
+            <StackLayout x:Name="RelatedItemsParent"></StackLayout>
+            <StackLayout x:Name="UseCasesParent"></StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
