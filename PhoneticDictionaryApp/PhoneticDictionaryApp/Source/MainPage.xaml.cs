@@ -30,7 +30,10 @@ namespace PhoneticDictionaryApp.Source
 
 		private void TryGetWord(object sender, EventArgs args)
 		{
-			DictionaryItem item = _dictionary.GetDictionaryItem(UserInput.Text);
+			string text = UserInput.Text;
+			UserInput.Text = "";
+
+			DictionaryItem item = _dictionary.GetDictionaryItem(text);
 
 			if(item != null)
 			{
@@ -38,8 +41,14 @@ namespace PhoneticDictionaryApp.Source
 			}
 			else
 			{
-				// Handle word not found
+				HandleItemNotFound(text);
 			}
+		}
+
+		private void HandleItemNotFound(string text)
+		{
+			DictionaryItem item = new DictionaryItem(text, "No result found.", "", true);
+			SetDataOnView(item);
 		}
 
 		private void SetDataOnView(DictionaryItem item)
