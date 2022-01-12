@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace PhoneticDictionaryApp.Source
 {
@@ -70,6 +71,17 @@ namespace PhoneticDictionaryApp.Source
                     }
                 }
             }
+
+            DictionaryItem newItem = new DictionaryItem("foo", "foo", "foo", true);
+            newItem.UseCases.Add(new DictionaryItem("I pity the foo", "I pity the foo", "I pity the foo", false));
+            newItem.UseCases.Add(new DictionaryItem("I pity the foo", "I pity the foo", "I pity the foo", false));
+            newItem.UseCases.Add(new DictionaryItem("I pity the foo", "I pity the foo", "I pity the foo", false));
+            newItem.UseCases.Add(new DictionaryItem("I pity the foo", "I pity the foo", "I pity the foo", false));
+            newItem.RelatedItems.Add(new DictionaryItem("foobar", "foobar", "foobar", false));
+            newItem.RelatedItems.Add(new DictionaryItem("foobar", "foobar", "foobar", false));
+            newItem.RelatedItems.Add(new DictionaryItem("foobar", "foobar", "foobar", false));
+            newItem.RelatedItems.Add(new DictionaryItem("foobar", "foobar", "foobar", false));
+            PhoneticDictionary.Add(newItem.Word, newItem);
         }
 
 		public DictionaryItem GetDictionaryItem(string word)
